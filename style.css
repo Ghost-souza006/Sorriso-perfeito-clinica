@@ -1,0 +1,583 @@
+/* Reset e estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #000000;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #00a8e8 0%, #0288d1 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+/* Logo */
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.logo .tagline {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Navegação */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar a:hover {
+    border-bottom-color: white;
+    opacity: 0.8;
+}
+
+/* Botão de Ação */
+.btn-agendar {
+    background-color: #fff;
+    color: #0288d1;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-agendar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+
+/* Main e Sections */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+}
+
+/* container ao redor da saudação inicial */
+#inicio .bemvindo-container {
+    max-width: 800px;
+    padding: 2rem;
+    border: 2px solid #0288d1;
+    border-radius: 12px;
+    background-color: #f0f8ff;
+    color: #000000; /* texto preto dentro do container */
+}
+
+#inicio .bemvindo-container h2,
+#inicio .bemvindo-container p {
+    color: #000000; /* garantir cor específica para título e parágrafo */
+}
+
+#inicio h2 {
+    font-size: 2.2rem;
+    color: #0288d1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+#inicio p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+/* Section Dentistas */
+#Dentistas {
+    padding: 3rem;
+    margin: 3rem 0;
+    border: 2px solid #0288d1;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.dentistas-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.dentistas-imagem {
+    flex: 1;
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.dentistas-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #0288d1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.dentistas-imagem img:hover {
+    transform: translateY(-5px) scale(111%);
+}
+
+.dentistas-texto {
+    flex: 1;
+}
+
+.dentistas-texto h2 {
+    color: #0288d1;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.dentistas-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Carrossel de Imagens */
+#galeria {
+    padding: 3rem;
+    margin: 3rem 0;
+}
+
+#galeria h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #0288d1;
+    margin-bottom: 2rem;
+}
+
+/* Section Serviços */
+#servicos {
+    padding: 3rem;
+    margin: 3rem 0;
+}
+
+#servicos h2 {
+    color: #0288d1;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#servicos p {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    /* texto preto no tema claro */
+    color: #000000;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+}
+
+/* quando o modo escuro estiver ativo, usa branco */
+body.dark-mode #servicos p {
+    color: #ffffff;
+}
+
+.servicos-lista {
+    list-style: none;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0;
+}
+
+.servicos-lista li {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    border-left: 5px solid #0288d1;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.servicos-lista li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(2, 136, 209, 0.2);
+}
+
+.servicos-lista li strong {
+    color: #0288d1;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.servicos-lista li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Formulário de Agendamento */
+.agendamento-section {
+    padding: 3rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.agendamento-section h2 {
+    color: #0288d1;
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+}
+
+.form-agendamento {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+
+.form-agendamento .campo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-agendamento .campo label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #333;
+}
+
+.form-agendamento input,
+.form-agendamento textarea {
+    padding: 0.8rem 1rem;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-agendamento .campo:nth-child(4) {
+    grid-column: 1 / -1;
+}
+
+.form-agendamento .campo:nth-child(5) {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-voltar {
+    display: inline-block;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    color: #0288d1;
+    border: 1px solid #0288d1;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.form-feedback {
+    margin-top: 0.6rem;
+    font-weight: 600;
+}
+
+/* Footer bonito */
+footer {
+    background: linear-gradient(135deg, #0288d1 0%, #00a8e8 100%);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+    font-size: 1.1rem;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.07);
+    margin-top: 2rem;
+}
+
+/* Depoimentos */
+#depoimentos {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+#depoimentos h2 {
+    color: #0288d1;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.depoimentos-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.depoimento-box {
+    background: #ffffff;
+    border: 2px solid #0288d1;
+    border-radius: 12px;
+    
+    padding: 2rem 1.5rem;
+    max-width: 320px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.depoimento-text {
+    font-size: 1.1rem;
+    color: #000;
+    margin-bottom: 1.2rem;
+    font-style: italic;
+}
+
+.depoimento-nome {
+    color: #0288d1;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.depoimento-estrelas {
+    display: flex;
+    gap: 0.2rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .form-agendamento {
+        grid-template-columns: 1fr;
+    }
+
+    .form-agendamento .campo:nth-child(4),
+    .form-agendamento .campo:nth-child(5) {
+        grid-column: 1 / -1;
+    }
+}
+
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carrossel {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    height: 400px;
+}
+
+.carrossel-item {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.carrossel-item.ativo {
+    display: block;
+    animation: slideIn 0.6s ease-in-out;
+}
+
+.carrossel-item.sair {
+    animation: slideOut 0.6s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.carrossel-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.seta {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.seta:hover {
+    background-color: #00a8e8;
+    transform: scale(1.1);
+}
+
+.seta:active {
+    transform: scale(0.95);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    #inicio {
+        padding: 2rem 1rem;
+    }
+
+    #inicio h2 {
+        font-size: 1.8rem;
+    }
+
+    #inicio p {
+        font-size: 1rem;
+    }
+
+    .dentistas-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .dentistas-imagem {
+        min-width: 100%;
+    }
+
+    .dentistas-texto p {
+        font-size: 1rem;
+    }
+
+    .carrossel-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .seta {
+        padding: 0.75rem;
+        font-size: 1.2rem;
+    }
+
+    #galeria h2 {
+        font-size: 1.8rem;
+    }
+}
+
+body {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.dark-mode {
+    background-color: #111;
+    color: white;
+}
+.tema-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tema-btn img {
+    width: 24px;
+    height: 24px;
+    transition: 0.3s;
+}
+
+.tema-btn:hover img {
+    transform: scale(1.1);
+}
+.tema-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.tema-btn:hover {
+    transform: scale(1.1);
+}

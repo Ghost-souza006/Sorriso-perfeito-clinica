@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Consulta - Clínica Sorriso Perfeito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>🦷 Clínica Sorriso Perfeito</h1>
+                <p class="tagline">Agende sua consulta</p>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#galeria">Galeria</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="agendamento" class="agendamento-section">
+            <h2>Agende Sua Consulta</h2>
+            <p>Preencha o formulário abaixo e nossa equipe entrará em contato para confirmar a data e horário.</p>
+
+            <form id="formAgendamento" class="form-agendamento" novalidate>
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@exemplo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Número</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 9 9999-9999"
+                        pattern="[0-9 ()+-]{8,}" required>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5"
+                        placeholder="Descreva seu pedido ou dúvida"></textarea>
+                </div>
+
+                <div class="campo">
+                    <button type="submit" class="btn-agendar">Enviar Pedido</button>
+                    <a href="index.html" class="btn-voltar">Voltar</a>
+                </div>
+
+                <p id="formFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p style="text-align:center; padding:1rem 0;">&copy; 2026 Clínica Sorriso Perfeito</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
