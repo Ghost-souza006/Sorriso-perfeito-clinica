@@ -13,6 +13,7 @@ Este repositório contém um site estático que demonstra conhecimentos básicos
 - CSS
 - JavaScript
 - Imagens e recursos estáticos
+- API ViaCep
 
 ---
 ## ▶️ Como Executar
@@ -70,4 +71,5 @@ saudacao();
 ---
 ## 🎯 Objetivo do Repositório
 Este repositório serve como portfólio para demonstrar habilidades em desenvolvimento front-end básico (HTML/CSS/JS) e para ser base de estudos e aprimoramentos futuros.
+
 
