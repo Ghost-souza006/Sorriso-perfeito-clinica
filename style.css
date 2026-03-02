@@ -5,14 +5,10 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #000000;
+    color: #333;
 }
 
 /* Cabeçalho */
@@ -101,21 +97,6 @@ main {
     margin: 2rem 0;
 }
 
-/* container ao redor da saudação inicial */
-#inicio .bemvindo-container {
-    max-width: 800px;
-    padding: 2rem;
-    border: 2px solid #0288d1;
-    border-radius: 12px;
-    background-color: #f0f8ff;
-    color: #000000; /* texto preto dentro do container */
-}
-
-#inicio .bemvindo-container h2,
-#inicio .bemvindo-container p {
-    color: #000000; /* garantir cor específica para título e parágrafo */
-}
-
 #inicio h2 {
     font-size: 2.2rem;
     color: #0288d1;
@@ -127,7 +108,7 @@ main {
     max-width: 600px;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #ffffff;
+    color: #555;
 }
 
 /* Section Dentistas */
@@ -210,15 +191,9 @@ main {
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.8;
-    /* texto preto no tema claro */
-    color: #000000;
+    color: #555;
     max-width: 700px;
     margin: 0 auto 1rem;
-}
-
-/* quando o modo escuro estiver ativo, usa branco */
-body.dark-mode #servicos p {
-    color: #ffffff;
 }
 
 .servicos-lista {
@@ -308,16 +283,6 @@ body.dark-mode #servicos p {
     gap: 1rem;
     align-items: center;
 }
-
-.form-agendamento .cep {
-    grid-column: 2; 
-    justify-self: stretch;
-}
-
-.form-agendamento .cep input {
-    width: 100%;
-}
-
 
 .btn-voltar {
     display: inline-block;
@@ -595,6 +560,3 @@ body {
 .tema-btn:hover {
     transform: scale(1.1);
 }
-
-
-

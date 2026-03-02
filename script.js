@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.addEventListener('click', () => mover(1));
     else console.warn('[carrossel] botão próximo não encontrado (nextBtn)');
 
-    // interação via teclado
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') mover(-1);
         if (e.key === 'ArrowRight') mover(1);
@@ -70,40 +69,112 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
  document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('formAgendamento');
-            const feedback = document.getElementById('formFeedback');
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
+    const form = document.getElementById('formAgendamento');
+    const feedback = document.getElementById('formFeedback');
+    const cepInput = form?.querySelector('#cep');
+    const ruaInput = form?.querySelector('#rua');
+    const cidadeInput = form?.querySelector('#cidade');
+    const estadoInput = form?.querySelector('#estado');
 
-                const dados = {
-                    nome: form.nome.value.trim(),
-                    email: form.email.value.trim(),
-                    telefone: form.telefone.value.trim(),
-                    mensagem: form.mensagem.value.trim(),
-                };
+    if (!form) return;
 
-                console.log('[agendamento] envio solicitado', dados);
+    // Flag para rastrear se o CEP foi validado com sucesso
+    let cepValido = false;
 
-                // validação simples
-                if (!dados.nome || !dados.email || !dados.telefone) {
-                    feedback.textContent = 'Por favor, preencha os campos obrigatórios.';
-                    feedback.style.color = '#c0392b';
-                    console.warn('[agendamento] validação falhou');
-                    return;
-                }
+    // Função para buscar endereço na API ViaCEP
+    async function buscarEnderecoPorCep(cep) {
+        const cepLimpo = cep.replace(/\D/g, '');
 
-                // aqui você poderia enviar os dados para um servidor via fetch
-                // ex: fetch('/api/agendar', { method: 'POST', body: JSON.stringify(dados) })
+        if (cepLimpo.length !== 8) {
+            feedback.textContent = '❌ CEP deve conter 8 dígitos.';
+            feedback.style.color = '#c0392b';
+            cepValido = false;
+            ruaInput.value = '';
+            cidadeInput.value = '';
+            estadoInput.value = '';
+            return;
+        }
 
-                // Simular sucesso localmente
-                feedback.textContent = 'Pedido enviado com sucesso! Em breve entraremos em contato.';
-                feedback.style.color = '#117a8b';
-                console.log('[agendamento] formulário válido — simulação de envio concluída');
+        try {
+            const response = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
+            const dados = await response.json();
 
-                form.reset();
-            });
+            if (dados.erro) {
+                feedback.textContent = '❌ CEP não encontrado.';
+                feedback.style.color = '#c0392b';
+                cepValido = false;
+                ruaInput.value = '';
+                cidadeInput.value = '';
+                estadoInput.value = '';
+                return;
+            }
+
+            // Preenche os campos automaticamente
+            ruaInput.value = dados.logradouro || '';
+            cidadeInput.value = dados.localidade || '';
+            estadoInput.value = dados.uf || '';
+            cepValido = true;
+            feedback.textContent = '✓ CEP validado com sucesso!';
+            feedback.style.color = '#27ae60';
+            console.log('[api-cep] endereço encontrado:', dados);
+        } catch (erro) {
+            feedback.textContent = '❌ Erro ao buscar CEP. Tente novamente.';
+            feedback.style.color = '#c0392b';
+            cepValido = false;
+            console.error('[api-cep] erro:', erro);
+        }
+    }
+
+    // Listener no campo CEP
+    if (cepInput) {
+        cepInput.addEventListener('blur', (e) => {
+            const cepValor = e.target.value.trim();
+            if (cepValor) {
+                buscarEnderecoPorCep(cepValor);
+            }
         });
+    }
 
-        
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const dados = {
+            nome: form.querySelector('#nome')?.value.trim() || '',
+            email: form.querySelector('#email')?.value.trim() || '',
+            telefone: form.querySelector('#telefone')?.value.trim() || '',
+            cep: form.querySelector('#cep')?.value.trim() || '',
+            rua: form.querySelector('#rua')?.value.trim() || '',
+            cidade: form.querySelector('#cidade')?.value.trim() || '',
+            estado: form.querySelector('#estado')?.value.trim() || '',
+            mensagem: form.querySelector('#mensagem')?.value.trim() || ''
+        };
+
+        console.log('[agendamento] envio solicitado', dados);
+
+        // Validação dos campos obrigatórios
+        if (!dados.nome || !dados.email || !dados.telefone || !dados.cep || !dados.rua || !dados.cidade || !dados.estado) {
+            feedback.textContent = 'Por favor, preencha os campos obrigatórios.';
+            feedback.style.color = '#c0392b';
+            console.warn('[agendamento] validação falhou');
+            return;
+        }
+
+        // Validação do CEP - impede envio se CEP for inválido
+        if (!cepValido) {
+            feedback.textContent = '❌ Por favor, valide o CEP antes de enviar.';
+            feedback.style.color = '#c0392b';
+            console.warn('[agendamento] CEP não foi validado');
+            return;
+        }
+
+        feedback.textContent = 'Pedido enviado com sucesso! Em breve entraremos em contato.';
+        feedback.style.color = '#27ae60';
+        console.log('[agendamento] formulário válido — simulação de envio concluída');
+
+        form.reset();
+        cepValido = false;
+    });
+
+});
         
