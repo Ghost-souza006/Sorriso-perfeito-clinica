@@ -21,6 +21,9 @@
                     <li><a href="index.html#servicos">Serviços</a></li>
                     <li><a href="index.html#galeria">Galeria</a></li>
                     <li><a href="index.html#contato">Contato</a></li>
+                    <li><button id="temaBtn" type="button" class="tema-btn">
+                        <span id="temaIcon">🌙</span>
+                    </button></li>
                 </ul>
             </nav>
         </div>
@@ -74,13 +77,30 @@
                         placeholder="Descreva seu pedido ou dúvida"></textarea>
                 </div>
 
-                <div class="campo">
+                <div class="campo botao-grupo">
                     <button type="submit" class="btn-agendar">Enviar Pedido</button>
                     <a href="index.html" class="btn-voltar">Voltar</a>
                 </div>
 
                 <p id="formFeedback" class="form-feedback" role="status" aria-live="polite"></p>
             </form>
+        </section>
+
+        <section id="clima" class="clima-section">
+            <h2>Clima em tempo real</h2>
+            <p>Digite sua cidade para ver o clima atual (temperatura, vento e condições).</p>
+
+            <div class="clima-form">
+                <div class="campo">
+                    <label for="cidadeClima">Cidade</label>
+                    <input type="text" id="cidadeClima" name="cidadeClima" placeholder="Ex: São Paulo" required>
+                </div>
+                <div class="campo">
+                    <button id="buscarClimaBtn" type="button" class="btn-agendar">Buscar clima</button>
+                </div>
+            </div>
+
+            <div id="climaResultado" class="clima-resultado" aria-live="polite"></div>
         </section>
     </main>
 

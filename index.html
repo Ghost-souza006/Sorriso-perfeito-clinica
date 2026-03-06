@@ -179,6 +179,31 @@
                 </div>
             </div>
         </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Use o formulário abaixo para enviar uma mensagem. Esta é uma área de contato fictícia e não envia e-mails reais.</p>
+
+            <form id="formContato" class="form-contato" novalidate>
+                <div class="campo">
+                    <label for="contatoNome">Nome</label>
+                    <input type="text" id="contatoNome" name="contatoNome" placeholder="Seu nome" required>
+                </div>
+                <div class="campo">
+                    <label for="contatoEmail">E-mail</label>
+                    <input type="email" id="contatoEmail" name="contatoEmail" placeholder="seu@exemplo.com" required>
+                </div>
+                <div class="campo">
+                    <label for="contatoMensagem">Mensagem</label>
+                    <textarea id="contatoMensagem" name="contatoMensagem" rows="4" placeholder="Digite sua mensagem"></textarea>
+                </div>
+                <div class="campo botao-grupo">
+                    <button type="submit" class="btn-agendar">Enviar mensagem</button>
+                    <button type="reset" class="btn-voltar">Limpar</button>
+                </div>
+                <p id="contatoFeedback" class="form-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </section>
     </main>
 
     <footer>
