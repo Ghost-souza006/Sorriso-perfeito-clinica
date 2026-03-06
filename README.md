@@ -65,13 +65,13 @@ saudacao();
 - [LinkedIn](https://www.linkedin.com/in/bernardo-ribeiro-737011323/)
 - [GitHub](https://github.com/BernardoFonsecaRibeiro/)
 - **Leonardo**
-- Email: seuemail@exemplo.com
-- [LinkedIn](https://www.linkedin.com/in/seu-perfil)
+- Email: leo.schmitt2708@gmail.com
 - [GitHub](https://github.com/Ghost-souza006)
 
 ---
 ## 🎯 Objetivo do Repositório
 Este repositório serve como portfólio para demonstrar habilidades em desenvolvimento front-end básico (HTML/CSS/JS) e para ser base de estudos e aprimoramentos futuros.
+
 
 
 
