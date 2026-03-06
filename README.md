@@ -1,4 +1,4 @@
-# Sorriso Perfeito - Clínica
+# 🦷 Sorriso Perfeito - Clínica
 > Site front-end desenvolvido como projeto demonstrativo, contendo páginas HTML, CSS e JavaScript.
 
 ## 📘 Sobre o Projeto
@@ -71,6 +71,7 @@ saudacao();
 ---
 ## 🎯 Objetivo do Repositório
 Este repositório serve como portfólio para demonstrar habilidades em desenvolvimento front-end básico (HTML/CSS/JS) e para ser base de estudos e aprimoramentos futuros.
+
 
 
 
