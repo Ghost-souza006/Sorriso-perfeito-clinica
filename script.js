@@ -283,28 +283,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ---------- Formulário de contato fictício ----------
-    const formContato = document.getElementById('formContato');
-    const contatoFeedback = document.getElementById('contatoFeedback');
-
-    if (formContato) {
-        formContato.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const nome = formContato.querySelector('#contatoNome')?.value.trim() || '';
-            const email = formContato.querySelector('#contatoEmail')?.value.trim() || '';
-            const mensagem = formContato.querySelector('#contatoMensagem')?.value.trim() || '';
-
-            if (!nome || !email) {
-                contatoFeedback.textContent = 'Por favor, preencha nome e e-mail.';
-                contatoFeedback.style.color = '#c0392b';
-                return;
-            }
-
-            contatoFeedback.textContent = '✅ Mensagem registrada (fictícia). Obrigado!';
-            contatoFeedback.style.color = '#27ae60';
-            formContato.reset();
-        });
-    }
-
 });
         

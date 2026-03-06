@@ -411,6 +411,96 @@ main > section h2:hover::after {
     align-items: start;
 }
 
+.contato-section {
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 18px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 1.5rem;
+}
+
+.contato-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contato-card {
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(2, 136, 209, 0.25);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
+}
+
+.contato-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #0288d1;
+}
+
+.contato-card p,
+.contato-card ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.contato-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contato-card ul li {
+    margin-bottom: 0.35rem;
+}
+
+.contato-mapa {
+    margin-top: 1rem;
+    border-radius: 14px;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, rgba(0, 136, 209, 0.14), rgba(0, 168, 232, 0.08));
+    border: 1px dashed rgba(2, 136, 209, 0.35);
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 600;
+}
+
+.contato-form-wrapper {
+    padding: 1.5rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(2, 136, 209, 0.18);
+    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.06);
+}
+
+.contato-form-wrapper h3 {
+    margin-top: 0;
+    color: #0288d1;
+    font-size: 1.35rem;
+}
+
+.mailto-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #0288d1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mailto-link:hover {
+    text-decoration: underline;
+}
+
 .form-agendamento .campo {
     display: flex;
     flex-direction: column;
@@ -709,6 +799,14 @@ footer {
 
     .clima-form {
         grid-template-columns: 1fr;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-form-wrapper {
+        padding: 1.25rem;
     }
 }
 
